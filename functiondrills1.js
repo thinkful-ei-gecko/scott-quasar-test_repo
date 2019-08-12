@@ -6,8 +6,16 @@ function createGreeting(name, age) {
 }
 
 function getYearOfBirth(age) {
+    if (age < 0) {
+        throw new Error("Age cannot be negative");
+    }
     return 2019 - age;
 }
 
-const greeting1 = createGreeting('Chris', 29);
+try {
+    const greeting1 = createGreeting('Chris', 29);
+} catch(e) {
+    console.log(e);
+}
+
 console.log(greeting1);
