@@ -14,4 +14,23 @@ function beyond(num) {
     }
 }
 
-//console.log(jediName('Quasar', 'Wei'));
+function decode(str) {
+    switch (str[0]) {
+        case 'a':
+            return str[1];
+        case 'b':
+            return str[2];
+        case 'c':
+            return str[3];
+        case 'd':
+            return str[4];
+        default: 
+            return ' ';
+    }
+}
+let string = 'craft block argon meter bells brown croon droop'.split(" ");
+let decoded = '';
+
+string.forEach(x=> decoded += decode(x));
+
+console.log(decoded);
