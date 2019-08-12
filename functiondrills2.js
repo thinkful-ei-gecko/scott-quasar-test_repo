@@ -59,4 +59,33 @@ function daysInMonth (month, leapYear) {
     }
 }
 
-console.log(daysInMonth('Februaasdfasdfry', true));
+// console.log(daysInMonth('Februaasdfasdfry', true));
+
+function rockPaperScissors(num) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+
+    // 1 rock
+    // 2 paper
+    // 3 scissors
+
+    if (num > 3 || num < 1) {
+        throw new Error ('enter a valid number between 1 and 3');
+    }
+
+    if (randomNo === num ) {
+        return 'tie';
+    } else if (num === 1 && randomNo === 3) {
+        return 'player 1 wins';
+    } else if (num === 3 && randomNo === 2) {
+        return 'player 1 wins';
+    } else if (num === 2 && randomNo === 1) {
+        return 'player 1 wins';
+    } else {
+        return 'computer wins';
+    }
+
+}
+for (let i = 0; i < 10; i++ )
+{
+    console.log(rockPaperScissors(Math.floor(Math.random() * 4) + 1));
+}
