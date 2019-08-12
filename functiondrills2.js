@@ -34,3 +34,29 @@ let decoded = '';
 string.forEach(x=> decoded += decode(x));
 
 console.log(decoded);
+
+function daysInMonth (month, leapYear) {
+    switch (month) {
+        case 'January': 
+        case 'March':
+        case 'May':
+        case 'July':
+        case 'August':
+        case 'October':
+        case 'December':
+            return `${month} has 31 days.`
+
+        case 'February':
+            return leapYear ? `${month} has 29 days` : `${month} has 28 days`;
+
+        case 'April':
+        case 'June':
+        case 'September':
+        case 'November':
+            return `${month} has 30 days.`
+        default:
+            throw new Error('must provide a valid month');
+    }
+}
+
+console.log(daysInMonth('Februaasdfasdfry', true));
